@@ -255,6 +255,7 @@ fun main() {
 }*/
 
 // 5-2. 데이터 클래스 toString() 함수
+/*
 fun main() {
   class NonDataClass(val name : String, val email : String, val age : Int)
   data class DataClass(val name : String, val email : String, val age : Int)
@@ -264,4 +265,52 @@ fun main() {
 
   println(" non data class toString : ${non.toString()}")
   println(" data class toString : ${data.toString()}") // 각각 입력된 주소 값을 통해 어떤 차이가 나는 지 알 수 있다.
+}*/
+
+// 5-3. object 클래스 (익명 클래스 생성 목적)
+
+/*
+open class Super {
+  open var data = 10
+  open fun some(){
+    println("i am super some() : $data")
+  }
+}
+
+val obj = object : Super() { // 익명 클래스는 타입이 지정되어야 오류가 안 나서 타입을 지정해줄 부모 클래스를 만들어주었다.
+  override var data = 20
+  override fun some(){
+    println("i am some() : $data")
+  }
+}
+
+fun main() {
+  obj.data = 30
+  obj.some()
+}
+*/
+
+// 5-4. 컴패니언 클래스 (객체 생성 없이 클래스 이름으로 멤버에 접근, 자바 static 클래스)
+class MyClass {
+  companion object{ // 이 안에 있는건 static 취급 받는다.
+    var data1 = 10
+    fun some1(){
+      println("data1은 $data1 이다.")
+    }
+  }
+  var data2 = 10
+  fun some2(){
+    println(data2)
+  }
+}
+
+fun main() {
+  var obj = MyClass()
+  obj.data2 = 20
+  obj.some2()
+
+  MyClass.data1 = 30 // 클래스 이름으로 접근이 가능하다
+  MyClass.some1()
+
+
 }
