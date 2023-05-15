@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ff0000"
+        android:src="@drawable/lake_1"
+        android:adjustViewBounds="true"
+        android:maxWidth="300dp"
+        android:maxHeight="300dp"/>
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="30dp"
+        android:background="#ff0000"
+        android:src="@drawable/lake_1"
+        android:adjustViewBounds="true" />
+    <!--이미지 영역을 정확히 정해 놓으니까 마지막 속성이 안 먹는다-->
+
+</LinearLayout>
